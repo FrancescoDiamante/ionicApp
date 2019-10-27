@@ -1,0 +1,7 @@
+{
+  "name": "BcDent",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

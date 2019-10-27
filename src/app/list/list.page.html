@@ -1,0 +1,28 @@
+<body>
+  <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+  </ion-buttons>
+ 
+  <ion-content style="--background:linear-gradient(0deg, rgba(34,193,195,1) 70%, rgba(255,255,255,1) 85%);">
+    <ion-img src='../assets/img/VeroLogoBcDent.png' class="center" style="width:40%;margin-top:0%;"></ion-img>
+    <br>
+    <br>
+    <ion-toolbar style="--background:transparent;--ion-color-base: transparent !important;">
+      <ion-searchbar></ion-searchbar>
+      <ion-list style="background-color: transparent">
+        
+        <ion-item *ngFor="let item of items" style="--background:transparent;--ion-color-base: transparent !important; width: 100%;" [routerLink]=item.url [queryParams]="{idPrenotazione: item.idPrenotazione}">
+            <div style="width:50%; padding:0%; text-align: center;">
+              {{item.motivo}}
+            </div>
+            <div style="width:25%; padding:0%; text-align: center;">
+              {{item.dataPrenotazione}}
+            </div>
+            <div style="width:25%; padding:0%; text-align: center;">
+              {{item.ora}}
+            </div>
+        </ion-item>
+      </ion-list>
+    </ion-toolbar>
+  </ion-content>
+</body>

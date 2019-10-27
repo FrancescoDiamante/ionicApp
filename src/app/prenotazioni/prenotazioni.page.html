@@ -1,0 +1,37 @@
+<ion-buttons slot="start">
+  <ion-menu-button></ion-menu-button>
+</ion-buttons>
+<ion-content style="--background:linear-gradient(0deg, rgba(34,193,195,1) 70%, rgba(255,255,255,1) 85%);">
+  <ion-img src='../assets/img/VeroLogoBcDent.png' class="center" style="width:50%;"></ion-img>
+  <br>
+  <form [formGroup]="RegForm" (ngSubmit)="effettuaPrenotazione(RegForm.value)">
+    <ion-item style="width:95%;" class="center">
+      <ion-label color="primary">Data: </ion-label>
+      <ion-input style="text-align: left;" type="date" id="data" placeholder="data" [formControl]="RegForm.controls['data']" formControlName="data"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item style="width:95%;" class="center">
+      <ion-label color="primary">OrarioScelta: </ion-label>
+      <ion-input style="text-align: left;" type="time" id="OrarioScelta" placeholder="Ora" [formControl]="RegForm.controls['OrarioScelta']" formControlName="OrarioScelta"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item style="width:95%;" class="center">
+      <ion-label color="primary">Tipo Problema: </ion-label>
+      <ion-input style="text-align: left;" type="text" id="tipoProblema" placeholder="tipoProblema" [formControl]="RegForm.controls['tipoProblema']" formControlName="tipoProblema"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item style="width:95%;" class="center">
+      <ion-label color="primary">Note: </ion-label>
+      <ion-input style="text-align: left;" type="text" id="note" placeholder="note" [formControl]="RegForm.controls['note']" formControlName="note"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item style="width:95%;" class="center">
+      <ion-label color="primary">email: </ion-label>
+      <ion-input style="text-align: left;" type="email" id="email" placeholder="email" [formControl]="RegForm.controls['email']" formControlName="email"></ion-input>
+    </ion-item>
+    <br>
+    <div class="ion-padding" style="display: block; margin-left: auto; margin-right: auto;width: 100px; padding-left:0%; margin-top: -2%;">
+      <ion-button expand="block" type="submit" style="width:100px; padding:0%;">Prenota</ion-button>
+    </div>
+  </form>
+</ion-content>
