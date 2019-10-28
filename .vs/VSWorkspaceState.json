@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\dettagli-prenotazione",
+    "\\src\\app\\home",
+    "\\src\\app\\login",
+    "\\src\\app\\prenotazioni",
+    "\\src\\app\\registrazione",
+    "\\src\\app\\registrazione-log",
+    "\\src\\app\\Services"
+  ],
+  "SelectedNode": "\\src\\app\\home\\home.page.scss",
+  "PreviewInSolutionExplorer": false
+}

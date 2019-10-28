@@ -9,6 +9,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class PrenotazioniPage implements OnInit {
   RegForm:FormGroup;
+  utente = localStorage.getItem("utente");   
 
   constructor(private service: PrenotazioniService, private form:FormBuilder) { 
     this.RegForm=form.group({

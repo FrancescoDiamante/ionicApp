@@ -1,7 +1,7 @@
 <ion-buttons slot="start">
   <ion-menu-button></ion-menu-button>
 </ion-buttons>
-<ion-content style="--background:linear-gradient(0deg, rgba(34,193,195,1) 70%, rgba(255,255,255,1) 85%);">
+<ion-content [hidden]="utente=='null'" style="--background:linear-gradient(0deg, rgba(34,193,195,1) 70%, rgba(255,255,255,1) 85%);">
   <ion-img src='../assets/img/VeroLogoBcDent.png' class="center" style="width:50%;"></ion-img>
   <br>
   <form [formGroup]="RegForm" (ngSubmit)="effettuaPrenotazione(RegForm.value)">
@@ -34,4 +34,24 @@
       <ion-button expand="block" type="submit" style="width:100px; padding:0%;">Prenota</ion-button>
     </div>
   </form>
+</ion-content>
+<ion-content [hidden]="!(utente=='null')" style="--background:linear-gradient(0deg, rgba(34,193,195,1) 70%, rgba(255,255,255,1) 85%);">
+    <ion-img src='../assets/img/VeroLogoBcDent.png' class="center" style="width:40%;margin-top:0%;"></ion-img>
+    <br>
+    <br>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>CIAO CLIENTE!</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+            Gentile cliente ti informiamo che per accedere ai restanti servizi della nostra app, come ad esempio comode prenotazioni effettuate direttamente da smartphone o la visualizzazione delle statistiche e dei dati dei nostri dentisti
+            bisogna autenticarsi. Se non sei un cliente abituale ma un nuovo cliente ti invitiamo ad effettuare la registrazione.
+        </ion-card-content>
+    </ion-card>
+    <ion-button style="float:right;padding-right:2em" (click)="login()">
+        EFFETTUA LOGIN
+        <ion-icon name="log-in"></ion-icon>
+
+    </ion-button>
 </ion-content>

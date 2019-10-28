@@ -10,7 +10,7 @@ export class PrenotazioniService {
   ret:any;
   res:any;
   
-  url= 'http://192.168.1.3:8080/';
+  url= 'http://192.168.1.7:8080/';
 
 
   constructor(private http: HttpClient) { }

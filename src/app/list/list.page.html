@@ -3,26 +3,52 @@
     <ion-menu-button></ion-menu-button>
   </ion-buttons>
  
-  <ion-content style="--background:linear-gradient(0deg, rgba(34,193,195,1) 70%, rgba(255,255,255,1) 85%);">
-    <ion-img src='../assets/img/VeroLogoBcDent.png' class="center" style="width:40%;margin-top:0%;"></ion-img>
-    <br>
-    <br>
-    <ion-toolbar style="--background:transparent;--ion-color-base: transparent !important;">
-      <ion-searchbar></ion-searchbar>
-      <ion-list style="background-color: transparent">
-        
-        <ion-item *ngFor="let item of items" style="--background:transparent;--ion-color-base: transparent !important; width: 100%;" [routerLink]=item.url [queryParams]="{idPrenotazione: item.idPrenotazione}">
-            <div style="width:50%; padding:0%; text-align: center;">
-              {{item.motivo}}
-            </div>
-            <div style="width:25%; padding:0%; text-align: center;">
-              {{item.dataPrenotazione}}
-            </div>
-            <div style="width:25%; padding:0%; text-align: center;">
-              {{item.ora}}
-            </div>
-        </ion-item>
-      </ion-list>
-    </ion-toolbar>
+  <ion-content [hidden]="utente=='null'" style="--background:linear-gradient(0deg, rgba(34,193,195,1) 70%, rgba(255,255,255,1) 85%);">
+      <ion-img src='../assets/img/VeroLogoBcDent.png' class="center" style="width:40%;margin-top:0%;"></ion-img>
+      <br>
+      <br>
+      <ion-toolbar style="--background:transparent;--ion-color-base: transparent !important;">
+          <ion-searchbar></ion-searchbar>
+          <ion-list style="background-color: transparent">
+
+              <ion-item *ngFor="let item of items" style="--background:transparent;--ion-color-base: transparent !important; width: 100%;" [routerLink]=item.url [queryParams]="{idPrenotazione: item.idPrenotazione}">
+                  <div style="width:45%; padding:0%; text-align: center;">
+                      {{item.motivo}}
+                  </div>
+                  <div style="width:30%; padding:0%; text-align: center;">
+                      {{item.dataPrenotazione}}
+                  </div>
+                  <div style="width:25%; padding:0%; text-align: center;">
+                      {{item.ora}}
+                  </div>
+              </ion-item>
+          </ion-list>
+      </ion-toolbar>
+      <ion-fab style="padding-bottom:50px" vertical="bottom" horizontal="end" slot="fixed">
+          <ion-fab-button (click)="aggiungiPrenotazione()">
+              <ion-icon name="add"></ion-icon>
+          </ion-fab-button>
+       </ion-fab>
   </ion-content>
+  <ion-content [hidden]="!(utente=='null')" style="--background:linear-gradient(0deg, rgba(34,193,195,1) 70%, rgba(255,255,255,1) 85%);">
+      <ion-img src='../assets/img/VeroLogoBcDent.png' class="center" style="width:40%;margin-top:0%;"></ion-img>
+      <br>
+      <br>
+      <ion-card>
+          <ion-card-header>
+              <ion-card-title>CIAO CLIENTE!</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+              Gentile cliente ti informiamo che per accedere ai restanti servizi della nostra app, come ad esempio comode prenotazioni effettuate direttamente da smartphone o la visualizzazione delle statistiche e dei dati dei nostri dentisti
+              bisogna autenticarsi. Se non sei un cliente abituale ma un nuovo cliente ti invitiamo ad effettuare la registrazione.
+          </ion-card-content>
+      </ion-card>
+      <ion-button style="float:right;padding-right:2em" (click)="login()">
+          EFFETTUA LOGIN
+          <ion-icon name="log-in"></ion-icon>
+
+      </ion-button>
+  </ion-content>
+  
 </body>

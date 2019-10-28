@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Data, Router } from '@angular/router';
-import { IonDatetime } from '@ionic/angular';
+import { Router } from '@angular/router';
 import { PrenotazioniService } from '../Services/prenotazioni.service';
 
 @Component({
@@ -9,7 +8,8 @@ import { PrenotazioniService } from '../Services/prenotazioni.service';
   styleUrls: ['list.page.scss']
 })
 export class ListPage implements OnInit {
-  private selectedItem: any;
+    selectedItem: any;
+    utente = localStorage.getItem("utente");   
 
   public items: Array<{ url:String; motivo: string; dataPrenotazione: String; ora: String; idPrenotazione: number; }> = [];
   constructor(private service: PrenotazioniService, private router:Router) {
@@ -71,6 +71,13 @@ export class ListPage implements OnInit {
         });
       });
     }
-  }
+    }
 
+    aggiungiPrenotazione() {
+        this.router.navigate(["/prenotazioni"]);
+    }
+
+    login() {
+        this.router.navigate(["/login"]);
+    }
 }

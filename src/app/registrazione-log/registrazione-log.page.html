@@ -4,24 +4,29 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-img src='../assets/img/logoDent.png' class="center" style="width:50%;"></ion-img>
+<ion-content style="--background:linear-gradient(0deg, rgba(34,193,195,1) 70%, rgba(255,255,255,1) 85%);">
+  <ion-img src='../assets/img/VeroLogoBcDent.png' class="center" style="width:50%;"></ion-img>
   <br>
   <form [formGroup]="Reg1Form" (ngSubmit)="Registra(Reg1Form.value)">
-    <br>
-    <ion-item>
-      <ion-label color="primary">Email: </ion-label>
-      <ion-input type="email" id="email" placeholder="username" [formControl]="Reg1Form.controls['email']" formControlName="email"></ion-input>
-    </ion-item>
-    <br>
-    <ion-item>
-      <ion-label color="primary">Password: </ion-label>
-      <ion-input type="password" id="password" placeholder="password" [formControl]="Reg1Form.controls['password']" formControlName="password"></ion-input>
-    </ion-item>
-    <br>
-    <div class="ion-padding" style="display: block; margin-left: auto; margin-right: auto;width: 100px; padding-left:0%; margin-top: -2%;">
-      <ion-button expand="block" type="submit" style="width:100px; padding:0%;">Registrati</ion-button>
-    </div>
+      <br>
+      <ion-item style="width:95%;" class="center">
+          <ion-label color="primary">Email: </ion-label>
+          <ion-input type="email" id="email" placeholder="username" [formControl]="Reg1Form.controls['email']" formControlName="email"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item style="width:95%;" class="center">
+          <ion-label color="primary">Password: </ion-label>
+          <ion-input type="password" id="password" placeholder="password" [formControl]="Reg1Form.controls['password']" formControlName="password"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item style="width:95%;" class="center">
+          <ion-label color="primary">Conferma password: </ion-label>
+          <ion-input type="password" id="password" placeholder="password" [formControl]="Reg1Form.controls['password']" formControlName="password"></ion-input>
+      </ion-item>
+      <br>
+      <div class="ion-padding" style="display: block; margin-left: auto; margin-right: auto;width: 100px; padding-left:0%; margin-top: -2%;">
+          <ion-button expand="block" type="submit" style="width:100px; padding:0%;">Registrati</ion-button>
+      </div>
   </form>
 
       
